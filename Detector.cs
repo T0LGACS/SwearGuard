@@ -159,7 +159,8 @@ public class SwearDetector
             if (i + 1 < tokens.Count && (Seni.Contains(t) && CakStems.Any(c => tokens[i + 1].StartsWith(c))
                 || CakStems.Any(c => t.StartsWith(c)) && Seni.Contains(tokens[i + 1]))) return t + " " + tokens[i + 1];
             if ((t == "amin" || t == "ami") && i + 1 < tokens.Count && AminWho.Contains(tokens[i + 1])) return t + " " + tokens[i + 1];
-            if (t.Contains("orsp") || t.Contains("orosp") || t.Contains("orsb") || t.Contains("orosb") || t.Contains("orasb") || t.Contains("orasp")) return t;
+            // "rsopu": "oerrrrsopu" -> "oersopu" iki yazım hatası (2026-11-23)
+            if (t.Contains("orsp") || t.Contains("rsopu") || t.Contains("orosp") || t.Contains("orsb") || t.Contains("orosb") || t.Contains("orasb") || t.Contains("orasp")) return t;
             if (t.Length >= 4 && t.StartsWith("mk")) return t;                       // "mkerosu", "mkabotu" (mk + isim)
             if ((t == "alahini" || t == "alahinizi" || t == "alahina") // tekrar eden harf teke iner: allah -> alah
                 &&

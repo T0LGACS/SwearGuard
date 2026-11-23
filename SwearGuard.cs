@@ -68,7 +68,7 @@ public class SwearGuardConfig : BasePluginConfig
 public class SwearGuard : BasePlugin, IPluginConfig<SwearGuardConfig>
 {
     public override string ModuleName => "SwearGuard";
-    public override string ModuleVersion => "2.8.0";
+    public override string ModuleVersion => "2.8.1";
     public override string ModuleAuthor => "Claude";
     public override string ModuleDescription => "Küfür eden oyunculara iki uyarı, üçüncüde susturma uygular.";
 
